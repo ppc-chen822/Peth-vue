@@ -57,7 +57,9 @@
           <div class="texthint" v-show="upwd_status == 2">密码不能为空</div>
         </div>
         <button id="login" @click="goLogin">登录</button>
-        <p class="goRegister"><a href="./pet_register.html">注册账号</a></p>
+        <p class="goRegister">
+          <router-link to="/register">注册账号</router-link>
+        </p>
         <p>
           点击&nbsp;注册或登录&nbsp;代表您同意&nbsp;<a href="">用户协议</a
           >&nbsp;和&nbsp;<a href="">隐私政策</a>
