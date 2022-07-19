@@ -111,14 +111,25 @@
             :key="idx"
           >
             <div class="pet_info_content">
-              <div class="info_content_img" id="info_content_img">
+              <div
+                class="info_content_img"
+                id="info_content_img"
+                v-for="(item, idn) in item"
+                :key="idn"
+                :class="{ show: liclass == idn }"
+              >
                 <a href="">
-                  <img src="/img/article_images/info01.jpg" alt="" />
+                  <img :src="item.art_pic" alt="" />
                 </a>
               </div>
               <div class="info_content_list">
-                <ul @mouseover="ImgChange">
-                  <li class="active" v-for="(item, idx) in item" :key="idx">
+                <ul>
+                  <li
+                    @mouseover="ImgChange(idn)"
+                    v-for="(item, idn) in item"
+                    :key="idn"
+                    :class="{ active: liclass == idn }"
+                  >
                     <div>
                       <div class="iconfont icon-a-maozhao1"></div>
                       <a href="">{{ item.title }}</a>
@@ -139,6 +150,7 @@
 export default {
   data() {
     return {
+      liclass: 0,
       num: 0, //默认索引值为0 '最近更新,为默认索引值'
       tabList: [
         {
@@ -195,7 +207,9 @@ export default {
     lineIncrease(event) {
       this.lineWidthStyle.width = event.clientX + "px";
     },
-    ImgChange(e) {},
+    ImgChange(idn) {
+      this.liclass = idn;
+    },
   },
 };
 </script>

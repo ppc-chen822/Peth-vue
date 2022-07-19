@@ -6,24 +6,38 @@ Vue.use(VueRouter);
 
 const routes = [
   {
+    path: "/pcart",
+    name: "pcart",
+    component: () => import("../views/PCart.vue"),
+  },
+  {
+    path: "/pdetails",
+    name: "pdetails",
+    component: () => import("../views/PDetails.vue"),
+  },
+  {
     path: "/login",
     name: "login",
     component: () => import("../views/Login.vue"),
+    meta: {
+      title: "peth登录",
+      hideFooter: true,
+    },
   },
   {
     path: "/register",
     name: "register",
     component: () => import("../views/Register.vue"),
+    meta: {
+      title: "peth注册",
+      hideFooter: true,
+    },
   },
 
   {
     path: "/",
     name: "index",
     component: Index,
-    meta: {
-      hideFooter: true,
-      title: "首页",
-    },
   },
   {
     path: "/pstore",

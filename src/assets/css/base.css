@@ -99,6 +99,9 @@
   color: #cc9756;
   transition: 0.5s all;
 }
+.footer{
+  margin-top: 100px;
+}
 .footer > .pet_content {
   width: 100%;
 }

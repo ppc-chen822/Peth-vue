@@ -5,10 +5,17 @@ Vue.use(Vuex);
 
 export default new Vuex.Store({
   state: {
-    imgBase: "http://localhost:8080/",
+    data: [],
+    user: [],
+    islogin: "",
+    count: "",
   },
   getters: {},
-  mutations: {},
+  mutations: {
+    updateUser(state, data) {
+      state.user = data;
+    },
+  },
   actions: {},
   modules: {},
 });

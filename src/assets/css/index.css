@@ -322,6 +322,10 @@
   width: 550px;
   height: 350px;
   background-size: 100% 100%;
+  display: none;
+}
+.pet_fourth > .pet_content .pet_information .show .pet_info_content .info_content_img .show{
+  display: block;
 }
 .pet_fourth > .pet_content .pet_information .show .pet_info_content .info_content_img>a{
   display: block;

@@ -1,10 +1,8 @@
-body{
-  background-color: #f0f0f0;
-}
 .center {
   position: relative;
   top: 0px;
-  width: 1090px;
+  width: 100vw;
+  height: 100vh;
   margin: 0 auto;
 }
 .center > .login_content {
@@ -42,13 +40,13 @@ body{
   background-color: #eeeeee;
 }
 .center > .login_content .inp_box > div:first-child > span {
-  display: none;
+  /* display: none; */
 }
 .center > .login_content .inp_box > div:first-child .show {
   display: block;
 }
-.center > .login_content .inp_box > div:last-child {
-  display: none;
+.center > .login_content .inp_box .texthint {
+  /* display: none; */
   margin-top: 10px;
   padding: 0 10px;
   font-size: 14px;
