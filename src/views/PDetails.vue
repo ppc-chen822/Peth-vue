@@ -271,34 +271,30 @@ export default {
     return {
       data: [],
       count: "1",
+      category: this.$route.query.category,
+      lid: this.$route.query.lid,
+      uid: this.$store.state.user.uid,
     };
   },
   mounted() {
     this.getData();
-    // this.goCan();
   },
   // created() {},
   methods: {
     getData() {
-      const lid = this.$route.query.lid;
-      const category = this.$route.query.category;
-      const url = `v1/products/prode?category=${category}&lid=${lid}`;
-      console.log(url);
-      console.log(lid, category);
-      console.log(url);
+      const url = `v1/products/prode?category=${this.category}&lid=${this.lid}`;
       this.axios.get(url).then((res) => {
         console.log(res);
         this.data = res.data.data[0];
       });
     },
     goCart() {
-      console.log(this.$store.state.user);
-      let uid = this.$store.state.user.uid;
-      let lid = this.$route.query.lid;
       const url = "http://127.0.0.1:3000/v1/products/cartadd";
-      let param = `user_id=${uid}&product_id=${lid}&count=${this.count}`;
+      let param = `user_id=${this.uid}&product_id=${this.lid}&category=${this.category}&count=${this.count}`;
       this.axios.post(url, param).then((res) => {
-        console.log(res);
+        if ((res.data.code = 200)) {
+          this.$router.push("/pcart");
+        }
       });
     },
   },

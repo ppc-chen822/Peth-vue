@@ -50,14 +50,22 @@
         </li>
       </ul>
       <div>
-        <a href="./petcart.html">
+        <div>欢迎:{{ userName }}</div>
+        <!-- <div @click="loginOut">退出</div> -->
+        <router-link to="/pcart">
           <div class="iconfont icon-gouwuche"></div>
-        </a>
+        </router-link>
         <a href="#">
           <div class="iconfont icon-sousuo"></div>
         </a>
         <router-link to="/login">
-          <div class="iconfont icon-geren"></div>
+          <div v-if="userName == null" class="iconfont icon-geren"></div>
+          <div v-else>
+            <div class="user-avatar">
+              <img src="/img/ydlcat.jpg" alt="" />
+            </div>
+            <ul></ul>
+          </div>
         </router-link>
       </div>
     </div>
@@ -65,7 +73,12 @@
 </template>
 
 <script>
-export default {};
+export default {
+  props: ["userName"],
+  mounted() {
+    console.log(this.userName);
+  },
+};
 </script>
 
 <style lang="scss" scoped></style>

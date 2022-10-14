@@ -119,10 +119,10 @@ export default {
       let param = `phone=${this.phone}&upwd=${this.upwd}`;
       this.axios.post(url, param).then((res) => {
         if (res.data.code == 200) {
-          console.log(res.data.data[0]);
-          this.$store.commit("updateUser", res.data.data[0]);
-          // console.log(object);
-          // this.$router.push("/");
+          console.log(res);
+          let userData = res.data.data[0];
+          this.$store.commit("updateLoginState", userData.uname);
+          this.$router.push("/");
         } else {
           alert("登录失败");
         }

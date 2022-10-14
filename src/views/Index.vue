@@ -176,6 +176,7 @@ export default {
     this.getIndexProductData();
     this.getArticleData();
   },
+
   computed: {},
   methods: {
     getIndexProductData() {
@@ -188,7 +189,6 @@ export default {
     getArticleData() {
       const url = "http://127.0.0.1:3000/v1/articles/art";
       this.axios.get(url).then((res) => {
-        console.log(res);
         const newContentList = [];
         newContentList[0] = res.data.data.slice(0, 9).filter((v) => {
           v.addtime = v.addtime.substring(0, 10);

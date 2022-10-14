@@ -246,6 +246,7 @@
 .center > .detail_content > .detail_content_info > .buy .cart_button > span {
   font-size: 20px;
   color: #fff;
+  user-select: none;
 }
 .center > .detail_content > .detail_content_info > .buy > .buy_collect {
   width: 50px;

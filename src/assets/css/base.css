@@ -8,7 +8,7 @@
   display: flex;
   justify-content: space-between;
   background-color: #f0f0f0;
-  /* box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.2); */
+  box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.2);
 }
 .pet_nav > a {
   line-height: 70px;
@@ -82,6 +82,8 @@
   z-index: -1;
   box-sizing: border-box;
   transition: 1s;
+  box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.2);
+
 }
 .pet_nav > ul > li:hover > .pet_list {
   display: block;
@@ -94,6 +96,17 @@
   font-size: 32px;
   padding: 0 15px;
   color: #000;
+}
+.pet_nav > div a > div .user-avatar{
+  width: 32px;
+  height: 32px;
+}
+.pet_nav > div a > div .user-avatar>img{
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+
 }
 .pet_nav > div a > div:hover {
   color: #cc9756;
